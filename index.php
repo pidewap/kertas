@@ -49,10 +49,10 @@ $linkk=$linkk[0];
 $id=explode('/autopush/',$hasil[$i]);
 $id=explode('"',$id[1]);
 $id=$id[0];
-$title=explode('<a href="'.$link.'">',$hasil[$i]);
+$title=explode('<h3><a href="'.$link.'">',$hasil[$i]);
 $title=explode('</a>',$title[1]);
 $title=$title[0];
-$titlee=explode('<a href="'.$link.'">',$hasil[$i]);
+$titlee=explode('<h4><a href="'.$link.'">',$hasil[$i]);
 $titlee=explode('</a>',$titlee[1]);
 $titlee=$titlee[0];
 $array[]=array(
