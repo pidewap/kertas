@@ -1,7 +1,6 @@
 <?php
-include './YouTube.class.php';
+include './index.php';
 $title='Download Video Gratis';
-include './header.php';
 $YouTube=new YouTube;
 if(file_exists('./cache/trending.json')){
 $time=filemtime('./cache/trending.json')+60*60;
@@ -39,5 +38,4 @@ echo '<table width="100%">
 }
 echo '</div>';
 
-include './footer.php';
 ?>
