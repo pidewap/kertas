@@ -34,7 +34,7 @@ function grab($url){
 // Return
 	}
 function trending(){
-$hasil=$this->grab('https://m.youtube.com/?hl=kr&gl=KR&client=mv-google');
+$hasil=$this->grab('https://www.apple.com/id/itunes/charts/songs/');
 $hasil=explode('<section class="section chart-grid">',$hasil);
 $hasil=explode('</section>',$hasil[1]);
 $hasil=explode('<li>',$hasil[0]);
