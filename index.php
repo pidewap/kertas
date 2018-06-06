@@ -35,42 +35,28 @@ function grab($url){
 	}
 function trending(){
 $hasil=$this->grab('https://m.youtube.com/?hl=kr&gl=KR&client=mv-google');
-$hasil=explode('Trending',$hasil);
-$hasil=explode('<hr size="1"',$hasil[1]);
-$hasil=explode('<img src="',$hasil[0]);
+$hasil=explode('<section class="section chart-grid">',$hasil);
+$hasil=explode('</section>',$hasil[1]);
+$hasil=explode('<li>',$hasil[0]);
 $array=array();
 for($i=1;$i<count($hasil);$i++){
-$link=explode('<a href="',$hasil[$i]);
+$link=explode('<h3><a href="',$hasil[$i]);
 $link=explode('">',$link[1]);
-$link=$link[0];
-if(preg_match('#watch#',$link)){
-$type="video";
-}else{
-$type="uknown";
-}
-$id=explode('i.ytimg.com/vi/',$hasil[$i]);
-$id=explode('/',$id[1]);
+$linkk=explode('<h4><a href="',$hasil[$i]);
+$linkk=explode('">',$linkk[1]);
+$id=explode('/autopush/',$hasil[$i]);
+$id=explode('"',$id[1]);
 $id=$id[0];
 $title=explode('<a href="'.$link.'">',$hasil[$i]);
 $title=explode('</a>',$title[1]);
 $title=str_replace(PHP_EOL,'',$title[0]);
-$anu=explode('<div style="',$hasil[$i]);
-$durasi=explode('</div>',$anu[2]);
-$durasi=explode('">',$durasi[0]);
-$durasi=str_replace(PHP_EOL,'',$durasi[1]);
-$channel=explode('</div>',$anu[3]);
-$channel=explode('">',$channel[0]);
-$channel=str_replace(PHP_EOL,'',$channel[1]);
-$view=explode('</div>',$anu[4]);
-$view=explode('">',$view[0]);
-$view=str_replace(PHP_EOL,'',str_replace('x ditonton','',$view[1]));
+$titlee=explode('<a href="'.$linkk.'">',$hasil[$i]);
+$titlee=explode('</a>',$titlee[1]);
+$titlee=str_replace(PHP_EOL,'',$titlee[0]);
 $array[]=array(
-'type'=>$type,
-'id'=>$id,
+'img'=>$id,
 'title'=>$title,
-'duration'=>$durasi,
-'channel'=>$channel,
-'view'=>$view
+'artist'=>$titlee
 );
 }
 return json_encode($array);
