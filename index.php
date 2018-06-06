@@ -40,20 +40,20 @@ $hasil=explode('</section>',$hasil[1]);
 $hasil=explode('<li>',$hasil[0]);
 $array=array();
 for($i=1;$i<count($hasil);$i++){
-$link=explode('<h3>',$hasil[$i]);
-$link=explode('"',$link[1]);
+$link=explode('<h3><a href="',$hasil[$i]);
+$link=explode('">',$link[1]);
 $link=$link[0];
-$linkk=explode('<h4>',$hasil[$i]);
-$linkk=explode('"',$linkk[1]);
+$linkk=explode('<h4><a href="',$hasil[$i]);
+$linkk=explode('">',$linkk[1]);
 $linkk=$linkk[0];
 $id=explode('/autopush/',$hasil[$i]);
 $id=explode('"',$id[1]);
 $id=$id[0];
-$title=explode('<h3>'.$link.'">',$hasil[$i]);
-$title=explode('</a></h3>',$title[1]);
+$title=explode('<h3><a href="'.$link.'">',$hasil[$i]);
+$title=explode('</a>',$title[1]);
 $title=$title[0];
-$titlee=explode('<h4>">',$hasil[$i]);
-$titlee=explode('</a></h4>',$titlee[1]);
+$titlee=explode('<h4><a href="'.$linkk.'">',$hasil[$i]);
+$titlee=explode('</a>',$titlee[1]);
 $titlee=$titlee[0];
 $array[]=array(
 'img'=>$id,
