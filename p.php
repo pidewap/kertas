@@ -20,8 +20,9 @@ foreach($json as $item){
 $img=$item->img;
 $title=$item->title;
 $artist=$item->artist;
+$artist=str_replace('"','`',$artist)
 $n=rand(0,100000);
-echo ''.$n.': {title: "'.$title.'", artist: "'.str_replace('"',''',$artist).'", img: "'.$img.'"},
+echo ''.$n.': {title: "'.$title.'", artist: "'.$artist.'", img: "'.$img.'"},
 ';
 }
 echo '
