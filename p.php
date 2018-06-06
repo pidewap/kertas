@@ -18,7 +18,7 @@ foreach($json as $item){
 $img=$item->img;
 $title=$item->title;
 $artist=$item->artist;
-echo 'img: '.$img.'<br>title: '.$title.'<br>'.$artist.'';
+echo 'img: '.$img.'<br>title: '.$title.'<br>artist: '.$artist.'<hr>';
 }
 
 ?>
