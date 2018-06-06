@@ -19,7 +19,8 @@ foreach($json as $item){
 $img=$item->img;
 $title=$item->title;
 $artist=$item->artist;
-echo ''.$title.':    { title: "'.$title.'", artist: "'.$artist.', img: "'.$img.'" },
+$n=rand(0,100000);
+echo ''.$n.':    { title: "'.$title.'", artist: "'.$artist.', img: "'.$img.'" },
 ';
 }
 ?>
