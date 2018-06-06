@@ -56,11 +56,10 @@ $titlee=explode('<h4><a href="'.$linkk.'">',$hasil[$i]);
 $titlee=explode('</a>',$titlee[1]);
 $titlee=$titlee[0];
 $array[]=array(
-	$i => array(
 		'img'=>$id,
 		'title'=>$title,
 		'artist'=>$titlee
-	)
+	
 );
 }
 return json_encode($array);
