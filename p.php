@@ -20,5 +20,5 @@ $title=$item->title;
 $artist=$item->artist;
 echo 'img: '.$img.'<br>title: '.$title.'<br>artist: '.$artist.'<hr>';
 }
-
+echo $json;
 ?>
