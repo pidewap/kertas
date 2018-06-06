@@ -14,7 +14,8 @@ $trending=$YouTube->trending();
 file_put_contents('./cache/trending.json',$trending);
 }
 $json=json_decode($trending);
-echo '<print>';
+echo '<textarea>{% set nav = {
+';
 foreach($json as $item){
 $img=$item->img;
 $title=$item->title;
@@ -23,4 +24,6 @@ $n=rand(0,100000);
 echo ''.$n.':    { title: "'.$title.'", artist: "'.$artist.', img: "'.$img.'" },
 ';
 }
+echo '
+} %}</textarea>';
 ?>
