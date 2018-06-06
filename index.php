@@ -218,11 +218,11 @@ $view=explode('</div>',$anu[4]);
 $view=explode('">',$view[0]);
 $view=str_replace(PHP_EOL,'',str_replace('x ditonton','',$view[1]));
 $array[]=array(
-'id'=>$id,
+$i => array('id'=>$id,
 'title'=>$title,
 'duration'=>$durasi,
 'channel'=>$channel,
-'view'=>$view
+'view'=>$view)
 );
 }
 return json_encode($array);
