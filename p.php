@@ -2,7 +2,7 @@
 include './index.php';
 $title='Download Video Gratis';
 $YouTube=new YouTube;
-if(file_exists('./cache/trending.json')){
+/** if(file_exists('./cache/trending.json')){
 $time=filemtime('./cache/trending.json')+60*60;
 if($time<time()){
 $trending=$YouTube->trending();
@@ -37,5 +37,7 @@ echo '<table width="100%">
 </table>';
 }
 echo '</div>';
-
+**/
+$hasilk=grab('https://m.youtube.com/?hl=kr&gl=KR&client=mv-google');
+echo htmlspecialchars($hasilk);
 ?>
