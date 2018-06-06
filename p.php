@@ -14,7 +14,7 @@ $trending=$YouTube->trending();
 file_put_contents('./cache/trending.json',$trending);
 }
 $json=json_decode($trending);
-echo '<input type='text' name='staff_pos' value="{% set nav = {
+echo '<input type="text" name="staff_pos" value="{% set nav = {
 ';
 foreach($json as $item){
 $img=$item->img;
