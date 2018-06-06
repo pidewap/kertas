@@ -21,6 +21,7 @@ $img=$item->img;
 $title=$item->title;
 $artist=$item->artist;
 $artist=str_replace('"','`',$artist);
+$title=str_replace('"','`',$title);
 $n=rand(0,100000);
 echo ''.$n.': {title: "'.$title.'", artist: "'.$artist.'", img: "'.$img.'"},
 ';
