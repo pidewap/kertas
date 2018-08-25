@@ -1,5 +1,5 @@
 <?php
-$content=file_get_contents("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit=100/json"); 
+$content=file_get_contents("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topsongs/limit='.$_GET['page'].'/json"); 
 $top_albums=json_decode($content);
 $tracks = $top_albums->feed->entry;
 echo '<textarea>{% set nav = {
